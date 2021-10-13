@@ -1,7 +1,6 @@
 import pageStyle from "../styles/componentStyle/hero.module.css"
 
-const Hero = () => {
-    return (
+const Hero = () => (
         <div className={`${pageStyle.hero_wrapper} flex flex-col lg:flex-row md:flex-row justify-around items-center sm:flex-col`}>
             <div className={`${pageStyle.self_intro}`}>
                 
@@ -26,12 +25,11 @@ const Hero = () => {
                 <h1>A college Student who's exloring new Tech.</h1>
             </div>
             <div className={`${pageStyle.logo_section}`}>
-                <a href="#">
+                <a href='/'>
                     bath.s
                 </a>
             </div>
         </div>
     )
-}
 
 export default Hero
