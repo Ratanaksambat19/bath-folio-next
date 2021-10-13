@@ -39,6 +39,10 @@
     "react-hooks"
   ],
   "rules": {
+    "react/jsx-props-no-spreading": "off",
+    "react/prop-types": "off",
+    // can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.
+    "react/no-unescaped-entities": 0,
     // NextJs specific fix: suppress errors for missing 'import React' in files for nextjs
     "react/react-in-jsx-scope": "off",
     // NextJs specific fix: allow jsx syntax in js files
