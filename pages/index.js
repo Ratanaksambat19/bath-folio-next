@@ -1,12 +1,17 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Hero from '../components/Hero'
+import Navigation from '../components/Navigation'
 
 export default function Home() {
   return (
     <div className={styles.container}>
-      <Head />
-
+      <Head>
+        
+        <title>Create Next App</title>
+        <link rel='icon' href='/favicon.ico' />
+      </Head>
+        <Navigation/>
       <main className={styles.main}>
         <Hero/>
       </main>
