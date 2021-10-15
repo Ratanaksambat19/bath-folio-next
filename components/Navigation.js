@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"
-import { IconContext } from "react-icons/lib"
 import { useMediaQuery } from 'react-responsive'
 import { VscFoldDown, VscFoldUp, VscHome, VscAccount, VscBook, VscBracketDot, VscTerminal, VscGithubInverted, VscBroadcast } from "react-icons/vsc"
 import pageStyle from "../styles/componentStyle/navigation.module.css"
@@ -18,7 +17,6 @@ const Navigation = () => {
     return (
         <>
         <div className={`${pageStyle.navigation_wrapper}`}>
-        <IconContext.Provider value={{ className: "global-class-name", color: 'white', size: "24px" }}>
             <div className={`${pageStyle.navbar}`}>
                 <button type="button" className={`${pageStyle.menu_bar}`} onClick={handleClick}>  
                         {
@@ -30,44 +28,51 @@ const Navigation = () => {
             <nav className={sidebar ? ` ${pageStyle.active} ${pageStyle.nav_menu}` : `${pageStyle.nav_menu}`}>
 
                     <ul className={`${pageStyle.items_wrapper} `} >
+
                         <li>
                             <a href="/">
+                                <span>home</span>
                                 <VscHome/>
                             </a>
                         </li>
                         <li>
                             <a href="/">
+                                <span>about_me</span>
                                 <VscAccount/>
                             </a>
                         </li>
                         <li>
                             <a href="/">
+                                <span>education</span>
                                 <VscBook/>
                             </a>
                         </li>
                         <li>
                             <a href="/">
+                                <span>experience</span>
                                 <VscBracketDot/>
                             </a>
                         </li>
                         <li>
                             <a href="/">
+                                <span>project</span>
                                 <VscTerminal/>
                             </a>
                         </li>
                         <li>
                             <a href="/">
+                                <span>my_repos</span>
                                 <VscGithubInverted/>
                             </a>
                         </li>
                         <li>
                             <a href="/">
+                                <span>contact</span>
                                 <VscBroadcast />
                             </a>
-                        </li>
+                            </li>
                     </ul>
                 </nav>
-            </IconContext.Provider>
             </div>
         </>
     )
