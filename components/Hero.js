@@ -1,8 +1,9 @@
 import Typical from "react-typical"
 import pageStyle from "../styles/componentStyle/hero.module.css"
+import btnStyle from "../styles/buttonStyle.module.css"
 
 const Hero = () => (
-        <div className={`${pageStyle.hero_wrapper} flex flex-col px-14 lg:flex-row md:flex-row items-center sm:flex-col`}>
+        <div className={`${pageStyle.hero_wrapper} flex  px-14 lg:flex-row md:flex-row items-center `}> 
         <div className={`${pageStyle.self_intro_section}`}>
             <div className={`${pageStyle.self_intro}`}>
                 <h1 className="lg:text-5xl md:text-4xl text-3xl">
@@ -15,15 +16,14 @@ const Hero = () => (
                         wrapper="p"
                     />
                 </div>
-            </div> 
-            <button type="button" className={`${pageStyle.pushable}`}>
-                <span className={`${pageStyle.shadow}`}/>
-                <span className={`${pageStyle.edge}`} />
-                <span className={`${pageStyle.front}`}>
-                        Push me
-                    </span>
-            </button>
-           
+                </div> 
+                <button type="button" className={`${btnStyle.pushable}`}>
+                    <span className={`${btnStyle.shadow}`}/>
+                    <span className={`${btnStyle.edge}`} />
+                    <span className={`${btnStyle.front}`}>
+                            Push me
+                        </span>
+                </button>
             </div>
             <div className={`${pageStyle.hero_img}`}>
                 <div className={`${pageStyle.main_img}`}>
@@ -33,7 +33,7 @@ const Hero = () => (
                     <img src="/hero/Saly-43.png" alt="" />
                 </div>
             </div>
-            <div className={`${pageStyle.introduction}  lg:text-3xl md:text-2xl text-xl`}>
+        <div className={`${pageStyle.introduction}  lg:text-3xl md:text-2xl text-xl`}>
                     <h1>A college Student who's exloring new Tech.</h1>
             </div>
             <div className={`${pageStyle.logo_section}`}>

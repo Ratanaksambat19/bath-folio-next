@@ -30,19 +30,19 @@ const Navigation = () => {
                     <ul className={`${pageStyle.items_wrapper} `} >
 
                         <li>
-                            <a href="/">
+                            <a href="#home">
                                 <span>home</span>
                                 <VscHome/>
                             </a>
                         </li>
                         <li>
-                            <a href="/">
+                            <a href="#about">
                                 <span>about_me</span>
                                 <VscAccount/>
                             </a>
                         </li>
                         <li>
-                            <a href="/">
+                            <a href="#education">
                                 <span>education</span>
                                 <VscBook/>
                             </a>

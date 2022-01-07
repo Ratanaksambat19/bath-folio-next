@@ -9,6 +9,16 @@ body {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+:root {
+  --white: #fffefe;
+  --primary: #001122;
+  --secondary: #000C1D;
+  --primary-blue: #102A44;
+  --grey: #d2d2d3;
+  --black: #000101;
+  --button-primary: #d9524a;
+}
+
 a {
   color: inherit;
   text-decoration: none;

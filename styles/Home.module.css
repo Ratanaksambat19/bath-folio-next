@@ -1,6 +1,18 @@
 .container {
     box-sizing: border-box;
+    
 }
 
 .main  {
+    /* height: 100vh; */
+    background-color: var(--primary);
+    
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+
+.section_wrapper {
+    /* height: 100vh; */
+    scroll-snap-align: center;
 }

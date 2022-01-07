@@ -1,0 +1,101 @@
+.education_wrapper {
+    overflow: hidden;
+    height: 100vh;
+    position: relative;
+    color: var(--white);
+}
+.education_section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.education_content {
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+}
+
+.self_learning {
+    background-color: var(--primary-blue);
+    text-align: center;
+    padding: 5%;
+}
+
+.title h2 {
+    font-size: 3vw;
+}
+
+.education_title {
+    background-color: #000C1D;
+    margin: 15px;
+    border-radius: 10px;
+    list-style: none;
+    width: 20vw;
+}
+
+.education_title:hover {
+    background-color: var(--button-primary);
+}
+
+.education_content li {
+    height: 30px;
+    transition: height .5s;
+}
+.education_title li:hover {
+    height: 100px;
+}
+
+
+.education_title .readmore_active {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .3s linear;
+    padding: 10px;
+}
+
+.education_content li:hover .readmore_active {
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0s .3s, opacity .3s linear;
+}
+
+.degree {
+    background-color: #102a443a;
+    text-align: center;
+    padding: 4.7%;
+}
+
+.degree_description {
+    background-color: var(--primary-blue);
+    border-radius: 10px;
+    width: 20vw;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+
+.degree_description:hover {
+    background-color: var(--button-primary);
+}
+
+.education_tab {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+@media screen and (max-width: 992px) {
+    .education_content {
+        position: absolute;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        width: 100vw;
+        justify-content: center;
+        align-items: center;
+    }
+}

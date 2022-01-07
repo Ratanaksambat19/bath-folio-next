@@ -1,0 +1,31 @@
+.page_title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    font-size: 20vw;
+    color: var(--white);
+    display: flex;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 2s linear;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+}
+
+.hidden {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    font-size: 20vw;
+    color: var(--white);
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 2s, opacity 2s linear;
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+}
