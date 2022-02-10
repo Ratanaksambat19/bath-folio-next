@@ -36,6 +36,10 @@
         width: 100%;
         left: 0;
     }
+
+    .description_container {
+        width: 100%;
+    }
 }
 /* .description_text{
     color: var(--white);
