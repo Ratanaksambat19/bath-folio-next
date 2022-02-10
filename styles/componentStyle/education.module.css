@@ -33,7 +33,7 @@
     margin: 15px;
     border-radius: 10px;
     list-style: none;
-    width: 20vw;
+    width: 80%;
     height: 30px;
     transition: height .5s;
 }
@@ -64,7 +64,7 @@
 .degree_description {
     background-color: var(--primary-blue);
     border-radius: 10px;
-    width: 20vw;
+    width: 80%;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -102,10 +102,5 @@
         width: 100vw;
         justify-content: center;
         align-items: center;
-    }
-
-    .education_title:hover {
-        height: 150px;
-        background-color: var(--button-primary);
     }
 }
