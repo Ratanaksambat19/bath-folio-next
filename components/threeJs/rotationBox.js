@@ -7,12 +7,10 @@ export default function Box(props) {
     // Set up state for the hovered and active state
     const [hovered, setHover] = useState(false)
     const [active, setActive] = useState(false)
-    // Rotate mesh every frame, this is outside of React without overhead
+
     useFrame(() => {
-        let meshRotation = mesh.current.rotation.x
-        meshRotation += 0.01
-        return meshRotation
-    })
+        mesh.current.rotation.x += 0.01;
+    });
 
     return (
         <mesh

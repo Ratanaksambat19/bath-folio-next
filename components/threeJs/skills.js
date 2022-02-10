@@ -12,10 +12,8 @@ export default function SkillsLoader({ skill }) {
     const [x, y, z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(4.5));
     
     useFrame(() => {
-        let meshRotation = mesh.current.rotation.x
-        meshRotation -= 0.02
-        return meshRotation
-    })
+        mesh.current.rotation.x -= 0.02;
+    });
 
     return (
         <>
