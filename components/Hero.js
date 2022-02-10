@@ -34,7 +34,7 @@ const Hero = () => (
                 </div>
             </div>
         <div className={`${pageStyle.introduction}  lg:text-3xl md:text-2xl text-xl`}>
-                    <h1>A college Student who's exloring new Tech.</h1>
+                    <h1>A college Student who's exploring new Tech.</h1>
             </div>
             <div className={`${pageStyle.logo_section}`}>
             <a href='/' className=" lg:text-4xl md:text-2xl text-2xl">

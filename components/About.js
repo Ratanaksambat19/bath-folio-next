@@ -1,7 +1,14 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, Suspense } from "react";
 import Typical from "react-typical"
-import Circle from './threeJs/Circle'
+import { PresentationControls } from '@react-three/drei'
+import { Canvas } from '@react-three/fiber'
 import useOnScreen from "../utils/useOnScreen";
+
+import Box from "./threeJs/rotationBox";
+import Circle from "./threeJs/Circle";  
+import JavascriptSkill from "./threeJs/javascriptBox"
+import SkillsLoader from "./threeJs/skills";
+import Cactus from "./threeJs/pyramid";
 
 import btnStyle from "../styles/buttonStyle.module.css"
 import titleAnimation from "../styles/titleAnimation.module.css";
@@ -29,10 +36,43 @@ const About = () => {
             </div>
             
             <div className={`${pageStyle.circle_threejs}`}>
-                <Circle />
+                {/* <Circle /> */}
+                {/* <Canvas flat dpr={[1, 2]} camera={{ fov: 25, position: [0, 0, 8] }}>
+                    <Suspense>
+                    <ambientLight />
+                    <PresentationControls global zoom={0.8} rotation={[0, -Math.PI / 4, 0]} polar={[0, Math.PI / 4]} azimuth={[-Math.PI / 4, Math.PI / 4]}>
+                            <group position-y={-0.20} dispose={null}>
+                                <Box />
+                                <JavascriptSkill/>
+
+                            </group>
+                    </PresentationControls>
+                    </Suspense>
+                </Canvas> */}
+                <Canvas flat dpr={[1, 2]} camera={{ fov: 25, position: [0, 0, 8] }}>
+                    <Suspense fallback={null}>
+                        <ambientLight />
+
+                        <PresentationControls global zoom={0.8} rotation={[0, -Math.PI / 4, 0]} polar={[0, Math.PI / 4]} azimuth={[-Math.PI / 4, Math.PI / 4]}>
+
+                        <group position-y={-0.2}>
+                            <Box />
+                        </group>
+                        {/* <JavascriptSkill/> */}
+                        {
+                            (['atom', 'vuejs', 'javascript', 'python']).map(skill  => (
+
+                                <SkillsLoader skill={skill} key={ skill }/>
+                            ))
+                            }
+                            </PresentationControls>
+                    </Suspense>
+                </Canvas>
             </div>
             
             <div className={`${pageStyle.description_wrapper}`} data-aos='fade-up' data-aos-delay="300">
+                <div className={`${pageStyle.description_container}`}>
+
                 <h1>Doung Ratanaksambat</h1>
                 <div className={`${pageStyle.self_description}`}>
                     A college student who is exploring new
@@ -50,87 +90,11 @@ const About = () => {
                     <span className={`${btnStyle.front}`}>
                         <Typical steps={['Download CV', 4000, "", 2000]} loop={Infinity} />
                     </span>
-                </button>
-            </div>
-
-            {/* <div className={`${pageStyle.content_wrapper}`} data-aos="fade-up" data-aos-delay="1000">
-                <h1>Doung Ratanaksambat</h1>
-                <div className={`${pageStyle.self_intro}`}>
-
-                    <div className={`${pageStyle.self_description}`}>
-                        A college student who is exploring new
-                        technology, having ambitous to challege
-                        with various problems. I am agile and
-                        adaptable with new project, well
-                        collaboration and support the team.
-
-                        I like photography and basketball, and sometimes I do mobile
-                        gamming as well.
-                    </div>
-
-                    <div className={`${pageStyle.self_skills}`}>
-                        <ul>
-                            <li>html, css, js</li>
-                        </ul>
-                    </div>
+                    </button>
                 </div>
-            </div> */}
-
+            </div>
         </div>
     )
 }
-// const { ref, inView, entry } = useInView({
-//     /* Optional options */
-//     threshold: 0,
-// });
-
-// useEffect(() => {
-//     console.log(inView);
-//     console.log(entry);
-//     console.log(ref)
-// }, [inView, entry, ref]);
-
-//  (
-
-//     <div className={`${pageStyle.about_wrapper}`} >
-//         {/* <div ref={ref} >
-//             <h2>{`Header inside viewport ${inView}.`}</h2>
-//         </div> */}
-
-//     {/* <InView as="div" onChange={(inView, entry) => console.log('Inview:', inView)}>
-//         <h2>Plain children are always rendered. Use onChange to monitor state.</h2>
-//     </InView> */}
-//         <InView as="div" onChange={(inView, entry) => console.log('Inview:', inView)}>
-//         <h1 className="text-white" >About me</h1>
-//         </InView>
-
-
-//         <div className={`${pageStyle.content_wrapper}`}>
-//             <div className={`${pageStyle.self_intro}`} data-aos="fade-up"
-//                 data-aos-delay="500">
-//                 <h1>Doung Ratanaksambat</h1>
-
-//                 <div className={`${pageStyle.self_description}`}>
-//                     A college student who is exploring new
-//                     technology, having ambitous to challege
-//                     with various problems. I am agile and
-//                     adaptable with new project, well
-//                     collaboration and support the team.
-
-//                     I like photography and basketball, and sometimes I do mobile
-//                     gamming as well.
-//                 </div>
-
-//                 <div className={`${pageStyle.self_skills}`}>
-//                     <ul>
-//                         <li>html, css, js</li>
-//                     </ul>
-//                 </div>
-//             </div>
-//         </div>
-
-//     </div>
-// )
-
 
 export default About;

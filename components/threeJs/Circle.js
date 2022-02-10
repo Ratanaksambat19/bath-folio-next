@@ -23,7 +23,7 @@ const Circle = () => {
         const material = new THREE.MeshStandardMaterial({ color: 0xFF6347 });
         
         const torus = new THREE.Mesh(geometry, material);
-        scene.add(torus);
+        // scene.add(torus);
 
         const pointLight = new THREE.PointLight(0xffffff);
         pointLight.position.set(20, 20, 20);
@@ -97,7 +97,7 @@ const Circle = () => {
             new THREE.SphereGeometry(5, 32, 16),
             new THREE.MeshStandardMaterial({ map: moonTexture, normalMap: normalTexture })
         );
-        scene.add(moon);
+        // scene.add(moon);
         
 
 

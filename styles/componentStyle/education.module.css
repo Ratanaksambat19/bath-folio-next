@@ -3,6 +3,7 @@
     height: 100vh;
     position: relative;
     color: var(--white);
+    text-align: center;
 }
 .education_section {
     height: 100vh;
@@ -33,31 +34,24 @@
     border-radius: 10px;
     list-style: none;
     width: 20vw;
-}
-
-.education_title:hover {
-    background-color: var(--button-primary);
-}
-
-.education_content li {
     height: 30px;
     transition: height .5s;
 }
-.education_title li:hover {
+
+.education_title:hover {
     height: 100px;
+    background-color: var(--button-primary);
 }
 
 
 .education_title .readmore_active {
     visibility: hidden;
-    opacity: 0;
     transition: opacity .3s linear;
     padding: 10px;
 }
 
-.education_content li:hover .readmore_active {
+.education_title li:hover .readmore_active {
     visibility: visible;
-    opacity: 1;
     transition: visibility 0s .3s, opacity .3s linear;
 }
 
@@ -87,6 +81,17 @@
     display: flex;
     justify-content: space-between;
 }
+
+.bootcamp_description {
+    background-color: var(--primary-blue);
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.bootcamp_description:hover {
+    background-color: var(--button-primary);
+}
+
 @media screen and (max-width: 992px) {
     .education_content {
         position: absolute;
@@ -97,5 +102,10 @@
         width: 100vw;
         justify-content: center;
         align-items: center;
+    }
+
+    .education_title:hover {
+        height: 150px;
+        background-color: var(--button-primary);
     }
 }

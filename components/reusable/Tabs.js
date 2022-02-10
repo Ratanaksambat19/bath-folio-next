@@ -14,35 +14,48 @@ const Tabs = ({children}) => {
 
 
     
-    const onClickTabItem = (tab) => {
-        console.log('tabss',tab)
-        setActiveTab({activeTab: tab})
+    const onClickTabItem = (event) => {
+
+        // console.log(event)
+        console.log('tabss', event.currentTarget.value)
+        console.log('from tabs')
+        // setActiveTab(tab)
+        // console.log(tab)
+        console.log(children[0].props.children)
+        setActiveTab(event.currentTarget.value)
     }
 
     return (
         <div className={`${pageStyle.tabs}`}>
             <ol className={`${pageStyle.tab_list}`}>
-                
                 {
                     children.map((child) => {
                         const { label } = child.props;
 
                         return (
-                            <Tab
-                                activeTab={activeTab}
-                                key={label}
-                                label={label}
-                                onClick={onClickTabItem}
-                            />
+                            <button type='button' key={label} onClick={onClickTabItem} value={label}>
+
+                                <Tab
+                                    activeTab={activeTab}
+                                    key={label}
+                                    label={label}
+                                    className="text-white"
+                                    
+                                />
+                            </button>
                         );
                     })
                 }
             </ol>
-            <div className={`${pageStyle.tab_content}`}>
-                {/* {children.map((child) => {
+            <div className={`${pageStyle.tab_content} h-full`}>
+                {children.map((child) => {
                     if (child.props.label !== activeTab) return undefined;
-                    return child.props.children;
-                })} */}
+                    return (
+                        <div key={child.props.label} className='text-white flex lg:flex-row lg:justify-around flex-col justify-center items-center gap-28'>
+                            {child.props.children}
+                        </div>
+                        )
+                })}
             </div>
         </div>
     )

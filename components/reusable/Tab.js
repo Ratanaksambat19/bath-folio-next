@@ -1,34 +1,23 @@
-// import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-
 import pageStyle from '../../styles/tabStyle.module.css';
 
-const Tab = (props) => {
+const Tab = ({ activeTab, label }) => {
 
-    const { activeTab, label } = props;
-    // const onClickTab = () => {
-    //     // console.log(label)
-    //     // onClickTab(label)
-    //     console.log(props)
-    // }
+    const getStyle = () => {
 
-    let customClass = 'tab-list-item';
-
-    if (activeTab === label) {
-        console.log('fromtab', activeTab)
-        customClass += ' tab-list-active';
+        if (activeTab === label) {
+            return pageStyle.tab_list_active
+        }
+        return pageStyle.tab_list_item
     }
+    
 
     return (
-        <div>
-            <button
-                type='button'
-                className={pageStyle.className}
-                // onClick={onClickTab}
-            >
+        <li
+            className={getStyle()}
+        >
             {label}
-            </button>
-        </div>
+        </li>
     );
 }
 
