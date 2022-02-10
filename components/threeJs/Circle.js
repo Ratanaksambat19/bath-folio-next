@@ -97,7 +97,7 @@ const Circle = () => {
             new THREE.SphereGeometry(5, 32, 16),
             new THREE.MeshStandardMaterial({ map: moonTexture, normalMap: normalTexture })
         );
-        // scene.add(moon);
+        scene.add(moon);
         
 
 

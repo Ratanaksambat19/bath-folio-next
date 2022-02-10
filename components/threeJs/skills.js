@@ -10,7 +10,12 @@ export default function SkillsLoader({ skill }) {
     const mesh = useRef()
     const colorMap = useLoader(TextureLoader, `skills/${skill}.png`)
     const [x, y, z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(4.5));
-    useFrame(() => (mesh.current.rotation.x -= 0.02))
+    
+    useFrame(() => {
+        let meshRotation = mesh.current.rotation.x
+        meshRotation -= 0.02
+        return meshRotation
+    })
 
     return (
         <>

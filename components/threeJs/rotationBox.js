@@ -8,16 +8,20 @@ export default function Box(props) {
     const [hovered, setHover] = useState(false)
     const [active, setActive] = useState(false)
     // Rotate mesh every frame, this is outside of React without overhead
-    useFrame(() => (mesh.current.rotation.x += 0.01))
+    useFrame(() => {
+        let meshRotation = mesh.current.rotation.x
+        meshRotation += 0.01
+        return meshRotation
+    })
 
     return (
         <mesh
             {...props}
             ref={mesh}
             scale={active ? 1.5 : 1}
-            onClick={(event) => setActive(!active)}
-            onPointerOver={(event) => setHover(true)}
-            onPointerOut={(event) => setHover(false)}>
+            onClick={() => setActive(!active)}
+            onPointerOver={() => setHover(true)}
+            onPointerOut={() => setHover(false)}>
             <boxGeometry args={[1, 2, 1]} />
             <meshStandardMaterial color={hovered ? 'hotpink' : 'darkblue'} />
         </mesh>

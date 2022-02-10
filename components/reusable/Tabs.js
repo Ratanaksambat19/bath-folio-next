@@ -7,21 +7,7 @@ import pageStyle from '../../styles/tabStyle.module.css';
 const Tabs = ({children}) => {
     const [activeTab, setActiveTab] = useState(children[0].props.label);
     
-    for (let i = 0; i <= 2; i++) {
-        // console.log(children[i])
-
-    }
-
-
-    
     const onClickTabItem = (event) => {
-
-        // console.log(event)
-        console.log('tabss', event.currentTarget.value)
-        console.log('from tabs')
-        // setActiveTab(tab)
-        // console.log(tab)
-        console.log(children[0].props.children)
         setActiveTab(event.currentTarget.value)
     }
 

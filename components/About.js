@@ -5,10 +5,7 @@ import { Canvas } from '@react-three/fiber'
 import useOnScreen from "../utils/useOnScreen";
 
 import Box from "./threeJs/rotationBox";
-import Circle from "./threeJs/Circle";  
-import JavascriptSkill from "./threeJs/javascriptBox"
 import SkillsLoader from "./threeJs/skills";
-import Cactus from "./threeJs/pyramid";
 
 import btnStyle from "../styles/buttonStyle.module.css"
 import titleAnimation from "../styles/titleAnimation.module.css";
@@ -36,19 +33,6 @@ const About = () => {
             </div>
             
             <div className={`${pageStyle.circle_threejs}`}>
-                {/* <Circle /> */}
-                {/* <Canvas flat dpr={[1, 2]} camera={{ fov: 25, position: [0, 0, 8] }}>
-                    <Suspense>
-                    <ambientLight />
-                    <PresentationControls global zoom={0.8} rotation={[0, -Math.PI / 4, 0]} polar={[0, Math.PI / 4]} azimuth={[-Math.PI / 4, Math.PI / 4]}>
-                            <group position-y={-0.20} dispose={null}>
-                                <Box />
-                                <JavascriptSkill/>
-
-                            </group>
-                    </PresentationControls>
-                    </Suspense>
-                </Canvas> */}
                 <Canvas flat dpr={[1, 2]} camera={{ fov: 25, position: [0, 0, 8] }}>
                     <Suspense fallback={null}>
                         <ambientLight />
@@ -58,7 +42,6 @@ const About = () => {
                         <group position-y={-0.2}>
                             <Box />
                         </group>
-                        {/* <JavascriptSkill/> */}
                         {
                             (['atom', 'vuejs', 'javascript', 'python']).map(skill  => (
 
