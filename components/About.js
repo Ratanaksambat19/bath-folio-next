@@ -67,11 +67,11 @@ const About = () => {
                     I like photography and basketball, and sometimes I do mobile
                     gamming as well.
                 </div>
-                <button type="button" className={`${btnStyle.pushable}`}>
+                    <button type="button" className={`${btnStyle.pushable}`}>
                     <span className={`${btnStyle.shadow}`} />
                     <span className={`${btnStyle.edge}`} />
                     <span className={`${btnStyle.front}`}>
-                        <Typical steps={['Download CV', 4000, "", 2000]} loop={Infinity} />
+                            <a href="/SambathCv.pdf" download><Typical steps={['Download CV', 4000, "", 2000]} loop={Infinity} /></a>
                     </span>
                     </button>
                 </div>

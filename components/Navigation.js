@@ -48,7 +48,7 @@ const Navigation = () => {
                             </a>
                         </li>
                         <li>
-                            <a href="/">
+                            <a href="#experience">
                                 <span>experience</span>
                                 <VscBracketDot/>
                             </a>

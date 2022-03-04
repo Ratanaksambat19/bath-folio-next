@@ -1,0 +1,7 @@
+.experience_wrapper {
+    overflow: hidden;
+    height: 100vh;
+    position: relative;
+    color: var(--white);
+    text-align: center;
+}
