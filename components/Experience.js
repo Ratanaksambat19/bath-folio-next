@@ -20,7 +20,7 @@ const Experience = () => {
             </div>
 
             <div className={`${pageStyle.experience_section}`}>
-                    <div>What do you expect bruh</div>
+                    <div>Nood dev no exp yet :(</div>
             </div>
         </div>
     )
