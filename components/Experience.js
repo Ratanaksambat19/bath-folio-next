@@ -5,6 +5,7 @@ import titleAnimation from "../styles/titleAnimation.module.css";
 
 const Experience = () => {
 
+    const skills = ['Appscript', 'Odoo', 'Vue', 'React']
     const ref = useRef() 
     const onScreen = useOnScreen(ref, "200px")
 
@@ -20,7 +21,16 @@ const Experience = () => {
             </div>
 
             <div className={`${pageStyle.experience_section}`}>
-                    <div>Nood dev no exp yet :(</div>
+                <div>
+                    <ul className={`${pageStyle.skills_wrapper}`}>
+                        {skills.map(skill => (<li key={skill}>{ skill }</li>))}
+                    </ul>
+
+                    <div className={`${pageStyle.viewtype_wrapper}`}>
+                        <ul>list</ul>
+                        <ul>Card</ul>
+                    </div>
+                </div>
             </div>
         </div>
     )
