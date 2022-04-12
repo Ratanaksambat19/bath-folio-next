@@ -1,5 +1,6 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import useOnScreen from "../utils/useOnScreen";
+import TagList from "./reusable/TagList";
 import pageStyle from "../styles/componentStyle/experience.module.css";
 import titleAnimation from "../styles/titleAnimation.module.css";
 
@@ -23,13 +24,13 @@ const Experience = () => {
             <div className={`${pageStyle.experience_section}`}>
                 <div>
                     <ul className={`${pageStyle.skills_wrapper}`}>
-                        {skills.map(skill => (<li key={skill}>{ skill }</li>))}
+                        <TagList tags={skills} />
                     </ul>
 
-                    <div className={`${pageStyle.viewtype_wrapper}`}>
+                    {/* <div className={`${pageStyle.viewtype_wrapper}`}>
                         <ul>list</ul>
                         <ul>Card</ul>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>

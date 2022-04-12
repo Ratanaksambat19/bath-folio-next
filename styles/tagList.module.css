@@ -1,0 +1,23 @@
+.tagListContainer {
+    display: flex;
+    justify-content: space-around;
+}
+
+.tagListContainer button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.btnContainer{
+    width: 40%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--black);
+}
+
+.active {
+    border: solid var(--grey) 0.1px;
+}
