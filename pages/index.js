@@ -1,4 +1,6 @@
 import Head from 'next/head'
+import { join } from 'path'
+import { readdirSync } from 'fs';
 import styles from '../styles/Home.module.css'
 import Hero from '../components/Hero'
 import Navigation from '../components/Navigation'
@@ -6,7 +8,10 @@ import About from '../components/About'
 import Education from '../components/Education'
 import Experience from '../components/Experience'
 
-export default function Home() {
+import getParsedFileContentBySlug from '../utils/getMdxContent';
+
+
+export default function Home({ blogs }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -29,7 +34,7 @@ export default function Home() {
         </section>
 
         <section className={styles.section_wrapper} id='experience'>
-          <Experience />
+          <Experience blogs={blogs}/>
         </section>
 
       </main>
@@ -37,4 +42,20 @@ export default function Home() {
       <footer className={styles.footer} />
     </div>
   )
+}
+
+const ARTICLE_PATH = join(process.cwd(), process.env.ARTICLE_MARKDOWN_PATH)
+
+export async function getStaticProps() {
+  const paths = readdirSync(ARTICLE_PATH)
+    .map(path => path.replace(/\.mdx?$/, ''))
+    .map(slug => (slug))
+  
+  const blogs = paths.map(path => getParsedFileContentBySlug(path, ARTICLE_PATH))
+
+  return {
+    props: {
+      blogs
+    }
+  }
 }

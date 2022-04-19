@@ -11,6 +11,7 @@ export default function getParsedFileContentBySlug(fileName, postsPath) {
     
     return {
         frontMatter: data,
+        fileName,
         content
     }
 }

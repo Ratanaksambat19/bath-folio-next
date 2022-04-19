@@ -5,3 +5,15 @@
     color: var(--white);
     text-align: center;
 }
+
+.experience_section {
+    padding: 5%;
+    height: 100%;
+}
+
+.articleCardWrapper {
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}

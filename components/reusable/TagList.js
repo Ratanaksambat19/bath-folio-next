@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import Fuse from "fuse.js";
 import styles from '../../styles/tagList.module.css';
 
 function TagBtn ({ isActive, value }) {
@@ -14,8 +15,33 @@ function TagBtn ({ isActive, value }) {
     )
 }
 
-export default function TagList ({ tags }) {
+const fuseOptions = {
+    threshold: 0.35,
+    location: 0,
+    distance: 100,
+    minMatchCharLength: 1,
+    shouldSort: true,
+    includeScore: true,
+    useExtendedSearch: true,
+    keys: ["frontMatter.tags"]
+};
+
+export default function TagList({ tags, blogs, filterBlogs, articleType  }) {
     const [tagList, setTagList] = useState([tags[0]])
+  
+    useEffect(() => {
+        const fuse = new Fuse(blogs, fuseOptions);
+
+        if (tagList.length === 0) {
+            const results = fuse.search(articleType).map((result) => result.item);
+            filterBlogs(results);
+        } else {    
+            const formattedTags = [...tagList.map((item) => ({ 'frontMatter.tags': item.toLowerCase() }))];
+            const queries = { $or: [...formattedTags] }
+            const results = fuse.search(queries).map((result) => result.item);
+            filterBlogs(results);
+        }
+    }, [tagList, filterBlogs, articleType, blogs])
 
     const handleTagClick = (e) => {
         
@@ -45,7 +71,6 @@ export default function TagList ({ tags }) {
                     < TagBtn value={value} isActive={activeTag}/>
                 </button>
             }
-                
             )}
         </div>
     )
