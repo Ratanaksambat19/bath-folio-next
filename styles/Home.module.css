@@ -4,7 +4,7 @@
 }
 
 .main  {
-    /* height: 100vh; */
+    height: 100vh;
     background-color: var(--primary);
     
     scroll-snap-type: y mandatory;
@@ -13,6 +13,6 @@
 }
 
 .section_wrapper {
-    /* height: 100vh; */
+    height: 100vh;
     scroll-snap-align: center;
 }

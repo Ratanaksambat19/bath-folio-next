@@ -17,3 +17,12 @@
     justify-content: space-evenly;
     align-items: center;
 }
+
+@media screen and (max-width: 760px) {
+    .experience_section {
+        padding-block: 25%;
+    }
+    .articleCardWrapperMobile {
+        margin-top: 10%;
+    }
+}   

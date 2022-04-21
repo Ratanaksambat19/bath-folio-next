@@ -9,7 +9,7 @@ export default function ArticleSummaryCard({ blog, fileName }) {
                     {blog.title}
                 </h1>
                 <p>{blog.abstract}</p>
-                <span>{blog.publishedOn}</span>
+                <span>Read more</span>
             </div>
         </Link>
     )

@@ -29,8 +29,9 @@ const fuseOptions = {
 export default function TagList({ tags, blogs, filterBlogs, articleType  }) {
     const [tagList, setTagList] = useState([tags[0]])
   
+    const fuse = new Fuse(blogs, fuseOptions);
+
     useEffect(() => {
-        const fuse = new Fuse(blogs, fuseOptions);
 
         if (tagList.length === 0) {
             const results = fuse.search(articleType).map((result) => result.item);
@@ -41,7 +42,7 @@ export default function TagList({ tags, blogs, filterBlogs, articleType  }) {
             const results = fuse.search(queries).map((result) => result.item);
             filterBlogs(results);
         }
-    }, [tagList, filterBlogs, articleType, blogs])
+    }, [tagList])
 
     const handleTagClick = (e) => {
         
