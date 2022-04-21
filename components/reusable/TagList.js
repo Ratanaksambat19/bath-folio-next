@@ -42,7 +42,7 @@ export default function TagList({ tags, blogs, filterBlogs, articleType  }) {
             const results = fuse.search(queries).map((result) => result.item);
             filterBlogs(results);
         }
-    }, [tagList])
+    }, [tagList]) //eslint-disable-line
 
     const handleTagClick = (e) => {
         
