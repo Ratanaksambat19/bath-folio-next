@@ -1,9 +1,5 @@
 import React, { useRef, useState } from "react";
 
-// Import css files
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-
 import useOnScreen from "../utils/useOnScreen";
 import TagList from "./reusable/TagList";
 import ArticleSummaryCard from "./reusable/ArticleSummaryCard";
