@@ -7,22 +7,24 @@
 }
 
 .experience_section {
-    padding: 5%;
+    padding: 2em;
+    padding-block: 10%;
     height: 100%;
 }
 
 .articleCardWrapper {
     height: 100%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 20px;
+    overflow-x: auto;
+    white-space: nowrap;
     align-items: center;
 }
 
 @media screen and (max-width: 760px) {
     .experience_section {
         padding-block: 25%;
-    }
-    .articleCardWrapperMobile {
-        margin-top: 10%;
     }
 }   

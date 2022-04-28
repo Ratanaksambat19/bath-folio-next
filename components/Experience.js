@@ -1,7 +1,4 @@
 import React, { useRef, useState } from "react";
-import Slider from "react-slick";
-import { useMediaQuery } from 'react-responsive'
-
 
 // Import css files
 import "slick-carousel/slick/slick.css";
@@ -18,15 +15,6 @@ const Experience = ({ blogs }) => {
 
     const skills = ['Appscript', 'Odoo', 'Vue', 'React']
     const [filteredBlogs, setFilteredBlogs] = useState(blogs);
-    const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
-
-    const settings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1
-    };
 
     const handleFilter = (data) => {
         setFilteredBlogs(data);
@@ -51,10 +39,7 @@ const Experience = ({ blogs }) => {
                     <TagList tags={skills} blogs={blogs} filterBlogs={handleFilter} articleType='project'/>
                     </ul>
 
-                <div className={isMobile? `${pageStyle.articleCardWrapperMobile}` : `${pageStyle.articleCardWrapper}`}>
-                    {
-                        isMobile ?
-                    <Slider {...settings} >
+                <div className={`${pageStyle.articleCardWrapper}`}>
                         {
                             filteredBlogs.map(item =>
                                 <ArticleSummaryCard
@@ -62,13 +47,6 @@ const Experience = ({ blogs }) => {
                                     blog={item.frontMatter}
                                     fileName={item.fileName} />)
                         }
-                            </Slider>
-                            : filteredBlogs.map(item =>
-                                <ArticleSummaryCard
-                                    key={item.frontMatter.title}
-                                    blog={item.frontMatter}
-                                    fileName={item.fileName} />)
-                    }
                 </div>
             </div>
         </div>

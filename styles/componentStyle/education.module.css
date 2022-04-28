@@ -5,6 +5,7 @@
     color: var(--white);
     text-align: center;
 }
+
 .education_section {
     height: 100vh;
     display: flex;
@@ -42,7 +43,6 @@
     height: 100px;
     background-color: var(--button-primary);
 }
-
 
 .education_title .readmore_active {
     visibility: hidden;

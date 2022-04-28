@@ -6,7 +6,6 @@
 .main  {
     height: 100vh;
     background-color: var(--primary);
-    
     scroll-snap-type: y mandatory;
     overflow-y: scroll;
     scroll-behavior: smooth;

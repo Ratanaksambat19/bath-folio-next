@@ -53,7 +53,7 @@ const About = () => {
                 </Canvas>
             </div>
             
-            <div className={`${pageStyle.description_wrapper}`} data-aos='fade-up' data-aos-delay="300">
+            <div className={`${pageStyle.description_wrapper}`} >
                 <div className={`${pageStyle.description_container}`}>
 
                 <h1>Doung Ratanaksambat</h1>

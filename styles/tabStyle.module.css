@@ -1,6 +1,6 @@
 .tab_list {  
-    border-bottom: 1px solid #ccc;
-    padding-left: 0;
+    border-bottom: 0.5px solid #ccc;
+    padding-left: 0px;
     color: white;
     display: flex;
     justify-content: space-around;
@@ -14,19 +14,20 @@
 }
 
 .tab_list_active {
-  background-color: var(--grey);
-  color: var(--primary);
+  color: var(--grey);
   padding: 10px;
-  border-radius: 10px;
+  border: solid var(--grey) 0.1px;
   margin-bottom: 10px;
 }
 
 .tab_content {
   margin-top: 20px;
-  width: 100vw;
+  width: 100%;
 }
 
 .tabs {
   height: 100%;
   margin-top: 15%;
+  width: 90%;
+  max-width: 1200px;
 }
